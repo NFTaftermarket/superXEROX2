@@ -7,7 +7,7 @@ const { privateKey, infuraProjectId, etherscanApiKey } = require('./secrets.json
 //
 // Select the network you want to deploy to here:
 //
-const defaultNetwork = "hardhat"; // test superfluid on rinkeby
+const defaultNetwork = "rinkeby";//"bsctestnet"; // test superfluid on rinkeby
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -71,6 +71,7 @@ export default {
     bsctestnet: {
       url: "https://data-seed-prebsc-2-s3.binance.org:8545/",
       chainId: 97,
+      gasPrice: 20000000000,
       accounts: [privateKey]
     },
     poa: {
@@ -94,6 +95,11 @@ export default {
     matic: {
       url: 'https://rpc-mainnet.maticvigil.com/',
       gasPrice: 1000000000,
+      accounts: [privateKey]
+    },
+    mumbai: {
+      url: 'https://rpc-mumbai.matic.today/',
+      gasPrice: 1000000001,
       accounts: [privateKey]
     },
   },

@@ -1,5 +1,10 @@
 {
-  "name": "hardhat-project",
+  "name": "superxerox2-contract",
+  "version": "0.0.1",
+  "description": "Contracts of the SuperXEROX2 Project",
+  "author": "NFTaftermarket",
+  "license": "MIT",
+  "repository": "NFTaftermarket/superXEROX2",
   "scripts": {
     "prepare:copytoken": "yarn add @openzeppelin/contracts@4.2.0",
     "prepare:bootstrap": "yarn add @openzeppelin/contracts@3.4.1",

@@ -7,7 +7,7 @@ const { privateKey, infuraProjectId, etherscanApiKey } = require('./secrets.json
 //
 // Select the network you want to deploy to here:
 //
-const defaultNetwork = "rinkeby";//"bsctestnet"; // test superfluid on rinkeby
+const defaultNetwork = "bsctestnet"; // test superfluid on rinkeby
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -40,7 +40,7 @@ export default {
     ropsten: {
       url: "https://ropsten.infura.io/v3/" + infuraProjectId,
       chainId: 3,
-      gasPrice: 20000000000,
+      gasPrice: 30000000000,
       // accounts: {mnemonic: mnemonic}
       accounts: [privateKey]
     },
@@ -106,6 +106,15 @@ export default {
     solidity: {
     compilers: [
       {
+        version: "0.7.6",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 200
+          }
+        }
+      },
+      {
         version: "0.8.3",
         settings: {
           optimizer: {
@@ -114,7 +123,7 @@ export default {
           }
         }
       },
-            {
+      {
         version: "0.5.5",
         settings: {
           optimizer: {

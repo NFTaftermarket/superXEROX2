@@ -1,3 +1,15 @@
+// refer to https://github.com/superfluid-finance/superfluid-protocol-docs/blob/master/networks/networks.md
+/*
+const Host = '0xeD5B5b32110c3Ded02a07c8b8e97513FAfb883B6'
+const CFAv1 = '0xF4C5310E51F6079F601a5fb7120bC72a70b96e2A'
+const fDAIx = '0x745861AeD1EEe363b4AaA5F1994Be40b1e05Ff90'
+const SuperTokenFactory	= '0xd465e36e607d493cd4CC1e83bea275712BECd5E0'
+*/
+const Host = '0xF2B4E81ba39F5215Db2e05B2F66f482BB8e87FD2'
+const CFAv1 = '0xaD2F1f7cd663f6a15742675f975CcBD42bb23a88'
+const fDAIx = '0xBF6201a6c48B56d8577eDD079b84716BB4918E8A'
+const SuperTokenFactory	= '0x6FA165d10b907592779301C23C8Ac9d1F79ca930'
+
 // We require the Hardhat Runtime Environment explicitly here. This is optional
 // but useful for running the script in a standalone fashion through `node <script>`.
 //
@@ -14,12 +26,13 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  const CopyToken = await hre.ethers.getContractFactory("CopyToken");
-  const greeter = await CopyToken.deploy();
+  const Bootstrap = await hre.ethers.getContractFactory("Bootstrap");
 
-  await greeter.deployed();
+  const bootstrap = await Bootstrap.deploy(Host, CFAv1, fDAIx, SuperTokenFactory);
 
-  console.log("CopyToken deployed to:", greeter.address);
+  await bootstrap.deployed();
+
+  console.log("Bootstrap deployed to:", bootstrap.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

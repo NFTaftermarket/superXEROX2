@@ -12,3 +12,4 @@ contract CopyToken is ERC1155PresetMinterPauser {
       // _mint(msg.sender, 0, 1000, "GOLD"); // owner, token id, amount, data
       // to use id for cryptokitty id as a copy of cryptokitty erc721 token
     }
+}

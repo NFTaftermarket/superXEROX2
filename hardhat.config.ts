@@ -2,7 +2,7 @@ import { task } from "hardhat/config";
 import "@nomiclabs/hardhat-waffle";
 import "@nomiclabs/hardhat-ethers";
 require("@nomiclabs/hardhat-etherscan");
-const { privateKey, infuraProjectId, etherscanApiKey } = require('./secrets.json');
+const { privateKey, infuraProjectId, etherscanApiKey, bscscanApiKey } = require('./secrets.json');
 
 //
 // Select the network you want to deploy to here:
@@ -28,7 +28,9 @@ export default {
   defaultNetwork,
   etherscan: {
     // Your API key for Etherscan
-    // Obtain one at https://etherscan.io/
+    // Obtain etherscan at https://etherscan.io/ or
+    // Obtain bscscan at https://bscscan.com/
+    // apiKey: bscscanApiKey
     apiKey: etherscanApiKey
   },
   networks: {

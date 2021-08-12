@@ -15,7 +15,6 @@ const defaultNetwork = "hardhat" //"bsctestnet"; // test superfluid on rinkeby
 
 task("signature", "Sign Message", 
 async (_, hre) => {
-console.log(hre.Sdk)
 const signature = await hre.sdk.signMessage({
     message: 'test message',
   });

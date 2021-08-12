@@ -23,6 +23,15 @@ const signature = await sdk.signMessage({
 // get currencies
 const currencies = await sdk.getNativeCurrencies()
 console.log('currencies', currencies)
+currencies.forEach(
+  (s) => {
+    console.log(s.name)
+  }
+)
+var bscLike = currencies.find(function(item, index, array){
+  return item.name === 'bsc';  // 取得陣列 like === 'bsc'
+});
+console.log(bscLike);  
 }
 
 main()

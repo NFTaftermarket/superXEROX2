@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": "NFTaftermarket/superXEROX2",
   "scripts": {
-    "useEthersport": "npx hardhat run scripts/use-etherspot.ts",
+    "useEtherspot": "npx hardhat run scripts/use-etherspot.ts",
     "prepare:copytoken": "yarn add @openzeppelin/contracts@4.2.0",
     "prepare:bootstrap": "yarn add @openzeppelin/contracts@3.4.1",
     "deploy:copytoken": "npx hardhat run scripts/deploy-copytoken.js --network ropsten",

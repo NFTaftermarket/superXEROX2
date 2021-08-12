@@ -1,0 +1,33 @@
+// use-etherspot.ts
+// refer to https://try.etherspot.dev/
+
+import { run, ethers, sdk, Sdk } from "hardhat";
+
+async function main() {
+   console.log(typeof Sdk)
+
+// create session
+  const output = await sdk.createSession();
+
+  console.log('session object', output);
+  console.log('session graphql headers', {
+    ['x-auth-token']: output.token,
+  });
+// sign message
+const signature = await sdk.signMessage({
+    message: 'dolore ipsum exercitation sit aute sint anim est nisi aliqua',
+  });
+
+  console.log('signature', signature);
+
+// get currencies
+const currencies = await sdk.getNativeCurrencies()
+console.log('currencies', currencies)
+}
+
+main()
+  .then(() => process.exit(0))
+  .catch((error) => {
+    console.error(error);
+    process.exit(1);
+  });

@@ -6,6 +6,7 @@
   "license": "MIT",
   "repository": "NFTaftermarket/superXEROX2",
   "scripts": {
+    "useEthersport": "npx hardhat run scripts/use-etherspot.ts",
     "prepare:copytoken": "yarn add @openzeppelin/contracts@4.2.0",
     "prepare:bootstrap": "yarn add @openzeppelin/contracts@3.4.1",
     "deploy:copytoken": "npx hardhat run scripts/deploy-copytoken.js --network ropsten",
@@ -16,13 +17,17 @@
     "test": "npx hardhat test"
   },
   "devDependencies": {
+    "@muzamint/hardhat-etherspot": "^0.0.2",
     "@nomiclabs/hardhat-ethers": "^2.0.2",
     "@nomiclabs/hardhat-waffle": "^2.0.1",
     "chai": "^4.3.4",
     "ethereum-waffle": "^3.4.0",
     "ethers": "^5.4.4",
+    "etherspot": "^1.15.0",
     "hardhat": "^2.5.0",
-    "ts-node": "^10.1.0"
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.3.0",
+    "semver": "^7.3.5"
   },
   "dependencies": {
     "@nomiclabs/hardhat-etherscan": "^2.1.4",

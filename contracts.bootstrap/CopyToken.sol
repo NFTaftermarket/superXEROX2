@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol
 contract CopyToken is ERC1155PresetMinterPauser {
 
     constructor() public ERC1155PresetMinterPauser("http://mars.muzamint.com:3000/{id}.json") {
-      // _mint(msg.sender, 0, 1000, "GOLD"); // owner, token id, amount, data
+      _mint(msg.sender, 0, 1000, "GOLD"); // owner, token id, amount, data
       // to use id for cryptokitty id as a copy of cryptokitty erc721 token
     }
 }

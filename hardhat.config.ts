@@ -41,8 +41,8 @@ export default {
     // Your API key for Etherscan
     // Obtain etherscan at https://etherscan.io/ or
     // Obtain bscscan at https://bscscan.com/
-    // apiKey: bscscanApiKey
-    apiKey: etherscanApiKey
+    apiKey: bscscanApiKey
+    // apiKey: etherscanApiKey
   },
   networks: {
   	localhost: {

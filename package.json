@@ -7,8 +7,8 @@
   "repository": "NFTaftermarket/superXEROX2",
   "scripts": {
     "useEtherspot": "npx hardhat run scripts/use-etherspot.ts",
-    "prepare:copytoken": "yarn add @openzeppelin/contracts@4.2.0",
-    "prepare:bootstrap": "yarn add @openzeppelin/contracts@3.4.1",
+    "prepare:copytoken": "yarn add @openzeppelin/contracts@4.2.0 && rm contracts && ln -s contracts.bootstrap contracts",
+    "prepare:bootstrap": "yarn add @openzeppelin/contracts@3.4.1 && rm contracts && ln -s contracts.copytoken contracts",
     "deploy:copytoken": "npx hardhat run scripts/deploy-copytoken.js --network ropsten",
     "deploy:bootstrap": "npx hardhat run scripts/deploy-bootstrap.js --network ropsten",
     "verify:copytoken": "npx hardhat verify 0xBEd1bb84251dC2f2eb7208dE4bc72950bC636BD9 --network ropsten --contract contracts/CopyToken.sol:CopyToken",
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@nomiclabs/hardhat-etherscan": "^2.1.4",
-    "@openzeppelin/contracts": "3.4.1",
+    "@openzeppelin/contracts": "4.2.0",
     "@superfluid-finance/ethereum-contracts": "^1.0.0-rc.5"
   }
 }

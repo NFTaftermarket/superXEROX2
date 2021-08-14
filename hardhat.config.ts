@@ -3,7 +3,7 @@ import "@nomiclabs/hardhat-waffle";
 import "@nomiclabs/hardhat-ethers";
 require("@nomiclabs/hardhat-etherscan");
 import "@muzamint/hardhat-etherspot";
-const { privateKey, infuraProjectId, etherscanApiKey, bscscanApiKey } = require('./secrets.json');
+const { polygonscanApiKey, privateKey, infuraProjectId, etherscanApiKey, bscscanApiKey } = require('./secrets.json');
 
 //
 // Select the network you want to deploy to here:
@@ -41,7 +41,9 @@ export default {
     // Your API key for Etherscan
     // Obtain etherscan at https://etherscan.io/ or
     // Obtain bscscan at https://bscscan.com/
-    apiKey: bscscanApiKey
+    // Obtain polygonscan at https://polygonscan.com/
+    apiKey: polygonscanApiKey
+    // apiKey: bscscanApiKey
     // apiKey: etherscanApiKey
   },
   networks: {
@@ -87,7 +89,8 @@ export default {
     bsctestnet: {
       url: "https://data-seed-prebsc-2-s3.binance.org:8545/",
       chainId: 97,
-      gasPrice: 20000000000,
+      gas: "auto",
+      gasPrice: 3000000000,
       accounts: [privateKey]
     },
     poa: {
@@ -132,6 +135,15 @@ export default {
       },
       {
         version: "0.7.6",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 200
+          }
+        }
+      },
+      {
+        version: "0.8.5",
         settings: {
           optimizer: {
             enabled: true,

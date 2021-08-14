@@ -14,13 +14,12 @@ async function main() {
   // await hre.run('compile');
 
   // We get the contract to deploy
-  console.log('asdfasdf')
-  const CopyToken = await hre.ethers.getContractFactory("CopyToken");
-  const copytoken = await CopyToken.deploy();
+  const MingNFT = await hre.ethers.getContractFactory("MingNFT");
+  const ming_nft = await MingNFT.deploy();
 
-  await copytoken.deployed();
+  await ming_nft.deployed();
 
-  console.log("CopyToken deployed to:", copytoken.address);
+  console.log("MingNFT deployed to:", ming_nft.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
